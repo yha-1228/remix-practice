@@ -13,6 +13,19 @@ module.exports = {
   },
   plugins: ["cypress", "tailwindcss"],
   rules: {
+    // JavaScript, TypeScript
+    "dot-notation": "warn",
+    "prefer-const": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        ignoreRestSiblings: true,
+        destructuredArrayIgnorePattern: "^_",
+      },
+    ],
+
+    // react
     "react/react-in-jsx-scope": "off",
     "react/jsx-no-useless-fragment": ["warn", { allowExpressions: true }],
     "react/jsx-curly-brace-presence": "warn",
