@@ -34,6 +34,39 @@ module.exports = {
     "react/self-closing-comp": "warn",
     "react/jsx-fragments": "warn",
     "react/hook-use-state": "warn",
+
+    // import
+    "import/newline-after-import": ["warn", { count: 1 }],
+    "import/no-cycle": "error",
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "never",
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "unknown",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+        ],
+        pathGroups: [
+          {
+            pattern: "react",
+            group: "builtin",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["react"],
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
   // we're using vitest which has a very similar API to jest
   // (so the linting plugins work nicely), but it means we have to explicitly
