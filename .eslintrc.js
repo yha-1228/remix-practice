@@ -12,6 +12,16 @@ module.exports = {
     "cypress/globals": true,
   },
   plugins: ["cypress", "tailwindcss"],
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-useless-fragment": ["warn", { allowExpressions: true }],
+    "react/jsx-curly-brace-presence": "warn",
+    "react/jsx-boolean-value": "warn",
+    "react/prop-types": "off",
+    "react/self-closing-comp": "warn",
+    "react/jsx-fragments": "warn",
+    "react/hook-use-state": "warn",
+  },
   // we're using vitest which has a very similar API to jest
   // (so the linting plugins work nicely), but it means we have to explicitly
   // set the jest version.
